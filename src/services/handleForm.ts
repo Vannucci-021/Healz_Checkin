@@ -2,9 +2,9 @@ import type { CheckinSchemaType } from '../schemas/CheckinSchemaZod';
 
 export default class HandleSubmit {
   private static API_URL =
-    import.meta.env.MODE === 'development'
-      ? 'http://localhost:3001' //roda local
-      : '/.netlify/functions'; // roda na netlify
+    typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      ? 'http://localhost:3001' // ambiente local
+      : '/.netlify/functions';   // produção Netlify
 
   async execute(input: CheckinSchemaType): Promise<any> {
     try {
@@ -16,7 +16,7 @@ export default class HandleSubmit {
 
       if (!res.ok) {
         const errorBody = await res.text();
-        throw new Error(`Error submitting form: ${res.status} ${res.statusText} - ${errorBody}`);
+        throw new Error(`Erro ao enviar: ${res.status} ${res.statusText} - ${errorBody}`);
       }
 
       return await res.json();

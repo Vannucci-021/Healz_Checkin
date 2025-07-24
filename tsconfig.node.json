@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "composite": true,                         
+    "composite": true,
     "target": "ES2023",
     "lib": ["ES2023"],
     "module": "ESNext",
@@ -10,7 +10,7 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "dist/functions",
-    "types": ["@netlify/functions", "node"],
+    "types": ["node"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
@@ -20,5 +20,5 @@
     "moduleDetection": "force",
     "noEmit": false
   },
-  "include": ["netlify/functions/**/*"]
+  "include": ["src/functions/**/*"]
 }

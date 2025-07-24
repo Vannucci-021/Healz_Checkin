@@ -1,10 +1,11 @@
 import type { CheckinSchemaType } from '../schemas/CheckinSchemaZod';
 
 export default class HandleSubmit {
-  private static API_URL =
+  // Altere para sua URL de backend real, local ou produção
+  private static API_URL = 
     typeof window !== 'undefined' && window.location.hostname === 'localhost'
-      ? 'http://localhost:3001' // ambiente local
-      : '/.netlify/functions';   // produção Netlify
+      ? 'http://localhost:3001' // backend local
+      : 'https://sua-api-producao.com'; // backend produção (ajuste aqui)
 
   async execute(input: CheckinSchemaType): Promise<any> {
     try {

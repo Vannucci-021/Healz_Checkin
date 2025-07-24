@@ -1,20 +1,33 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Fullstack Vite + Node API",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "moduleResolution": "bundler",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2024",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Iterator"
+    ],
+    "moduleResolution": "Node16",
+    "outDir": "dist",
+    "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "outDir": "dist/client",
-    "strict": true,
-    "types": ["vite/client"],
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
     "noEmit": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["vite/client", "@types/node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "api", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

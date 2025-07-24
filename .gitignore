@@ -40,3 +40,6 @@ turbo/
 
 # Lockfiles - mantenha só um pra evitar conflitos
 package-lock.json
+
+.env
+credentials.json
